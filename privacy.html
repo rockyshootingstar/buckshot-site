@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buckshot Privacy Policy</title>
+<meta name="description" content="How the Buckshot Mac app handles your data, including Google user data.">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="Buckshot app icon">
+    <div>
+      <h1>Privacy Policy</h1>
+      <p class="muted" style="margin:0">Buckshot for Mac · Last updated September 30, 2026</p>
+    </div>
+  </header>
+
+  <p><strong>Short version:</strong> Buckshot runs entirely on your Mac. It has no servers, no analytics, no ads and no accounts of its own. Nothing you put into Buckshot is sent to the developer or to anyone other than the people you choose to message.</p>
+
+  <h2>What Buckshot stores, and where</h2>
+  <ul>
+    <li><strong>Contacts and lists</strong> you enter (names, phone numbers, email addresses), <strong>drafts</strong>, and <strong>send history</strong> (who you sent which files to, and when). These are saved only on your Mac, in <code>~/Library/Application Support/Buckshot</code>.</li>
+    <li><strong>Your files</strong> are never uploaded anywhere by Buckshot except as attachments to the messages you send. For iMessage, Buckshot makes a temporary copy for the Messages app and permanently deletes it shortly after sending.</li>
+    <li><strong>Your email sign-in</strong> (a Google sign-in token, or an app password for other providers) is stored in your Mac's Keychain, never in a file.</li>
+  </ul>
+
+  <h2>Google user data</h2>
+  <p>If you sign in with Google to send email from Gmail, Buckshot requests these permissions:</p>
+  <ul>
+    <li><strong>Send email on your behalf</strong> (<code>https://www.googleapis.com/auth/gmail.send</code>): used only to send the messages and attachments you write in Buckshot, to the recipients you pick, when you press Send.</li>
+    <li><strong>Your name and email address</strong> (<code>openid</code>, <code>email</code>, <code>profile</code>): used only to show which account you're sending from and to put your name in the From line.</li>
+  </ul>
+  <p>Buckshot <strong>does not</strong> read, search, download, change or delete any of your email, contacts or other Google data. It does not store the content of your Gmail account. Your Google data is never sent to the developer, never sold, never used for advertising, and never shared with or transferred to anyone. The only exception is that the messages you send go to the recipients you chose, through Google.</p>
+  <p>Buckshot's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <h2>iMessage</h2>
+  <p>iMessages are sent by the Messages app on your Mac, using your own Apple account. Buckshot asks macOS for permission to control Messages for this purpose only.</p>
+
+  <h2>Removing your data</h2>
+  <ul>
+    <li><strong>Disconnect Google:</strong> in Buckshot, open Settings ▸ Email ▸ Sign Out. This deletes the sign-in token from your Keychain. You can also remove Buckshot's access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+    <li><strong>Delete everything else:</strong> quit Buckshot and delete the folder <code>~/Library/Application Support/Buckshot</code>, then delete the app.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>Buckshot isn't directed at children under 13 and doesn't knowingly collect their information.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version will be posted on this page with a new date.</p>
+
+  <h2>Contact</h2>
+  <p>Rocky · <a href="mailto:rockyshootingstar@gmail.com">rockyshootingstar@gmail.com</a></p>
+
+  <footer><a href="index.html">Buckshot home</a></footer>
+</main>
+</body>
+</html>
