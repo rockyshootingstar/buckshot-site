@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 152)</title>
+      <pubDate>Tue, 13 Oct 2026 10:01:24 -0700</pubDate>
+      <sparkle:version>152</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>Import your contacts from Apple Contacts, and a new Settings switch for anonymous usage counts.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-152/Buckshot-0.5-152.zip" type="application/octet-stream" sparkle:edSignature="ftTr1PprxCPxzwb9I12MhyP+kCuP3U/k14lbT8EM+suFKXmKeoPi1LO95EFWXnwbItXRqwuYvQTUFGZmIV17Aw==" length="7472484" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 151)</title>
       <pubDate>Tue, 13 Oct 2026 09:44:57 -0700</pubDate>
       <sparkle:version>151</sparkle:version>
