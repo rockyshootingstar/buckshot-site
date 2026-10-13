@@ -18,12 +18,13 @@
     </div>
   </header>
 
-  <p><strong>Short version:</strong> Buckshot runs entirely on your Mac. It has no servers, no analytics, no ads and no accounts of its own. Nothing you put into Buckshot is sent to the developer or to anyone other than the people you choose to message.</p>
+  <p><strong>Short version:</strong> Buckshot runs on your Mac. It has no ads and no accounts of its own. Your contacts, messages and files are never sent to the developer or to anyone other than the people you choose to message. The only things that reach Buckshot's small server are optional email open tracking and anonymous usage counts, both described below, and both can be turned off.</p>
 
   <h2>What Buckshot stores, and where</h2>
   <ul>
     <li><strong>Contacts and lists</strong> you enter (names, phone numbers, email addresses), <strong>drafts</strong>, and <strong>send history</strong> (who you sent which files to, and when). These are saved only on your Mac, in <code>~/Library/Application Support/Buckshot</code>.</li>
     <li><strong>Your files</strong> are never uploaded anywhere by Buckshot except as attachments to the messages you send. For iMessage, Buckshot makes a temporary copy for the Messages app and permanently deletes it shortly after sending.</li>
+    <li><strong>Apple Contacts (optional):</strong> if you choose Import from Apple Contacts, Buckshot reads the names, phone numbers and email addresses in your Mac's Contacts app, with your permission, and adds the people you pick to Buckshot's contacts on your Mac. It never changes anything in the Contacts app and never sends your contacts anywhere.</li>
     <li><strong>Your email sign-in</strong> (a Google sign-in token, or an app password for other providers) is stored in your Mac's Keychain, never in a file.</li>
   </ul>
 
@@ -41,6 +42,12 @@
   <p>iMessages are sent by the Messages app on your Mac, using your own Apple account. Buckshot asks macOS for permission to control Messages for this purpose only.</p>
   <p><strong>Delivered / Read (optional, off by default):</strong> if you turn this on, Buckshot reads the delivered and read times of the iMessages it sent, from Messages' own records on your Mac (read-only). macOS requires Full Disk Access for this. Buckshot doesn't read your conversations, and this information never leaves your Mac.</p>
   <p><strong>Scheduled send-outs</strong> are stored on your Mac with copies of their files, which are permanently deleted after they're sent or cancelled.</p>
+
+  <h2>Email open tracking (optional)</h2>
+  <p>If you turn on Track opens for a send-out, each email carries a tiny invisible image from Buckshot's server. When the recipient's mail app loads it, the server stores a random code, the time, and the mail app's name (its "user agent"), for up to 120 days, so Buckshot can show you "Opened". No names, email addresses or message contents are stored. Only your copy of Buckshot can read your opens.</p>
+
+  <h2>Anonymous usage counts</h2>
+  <p>To see how many people use Buckshot, it sends two anonymous counts to Buckshot's server: once a day "this Mac used Buckshot", and after each send-out how many people it went to. The only identifier is a random number made on your Mac. No names, email addresses, contacts, messages or files are ever included. You can turn this off in Settings ▸ Sending &amp; Files ▸ Share anonymous usage counts.</p>
 
   <h2>Removing your data</h2>
   <ul>
