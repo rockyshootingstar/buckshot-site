@@ -29,13 +29,15 @@
 
   <main>
     <div class="hero">
-      <picture><source srcset="icon-light.png" media="(prefers-color-scheme: light)"><img class="icon" src="icon-dark.png" alt="Buckshot app icon"></picture>
-      <span class="chip"><span class="dot"></span>For Mac · Coming soon</span>
+      <div class="badge">
+        <div class="glow"><picture><source srcset="icon-light.png" media="(prefers-color-scheme: light)"><img class="icon" src="icon-dark.png" alt="Buckshot app icon"></picture></div>
+        <span class="chip"><span class="dot"></span>For Mac · Coming soon</span>
+      </div>
       <h1>Send to everyone. <em>One message each.</em></h1>
-      <p class="lede">Buckshot is a Mac app for producers and creators. Pick a list, drop in your beats, and every artist gets their own iMessage or email. No group chats, no reply-all.</p>
+      <p class="lede">Buckshot is a Mac app for producers and musicians. Pick a list, drop in your beats, and everyone on it gets their own individual message, by text or email depending on the contact info you have for them.</p>
       <div class="actions">
         <a class="pill orange big" href="#how">See how it works</a>
-        <a class="pill big" href="#google">Privacy &amp; Google sign-in</a>
+        <a class="pill big" href="#privacy">Privacy</a>
       </div>
     </div>
 
@@ -45,46 +47,50 @@
       <div class="steps">
         <div class="card"><span class="num">1</span><h3>Pick a list</h3><p>Keep your collaborators in lists, like “pain loops” or “trap beats”.</p></div>
         <div class="card"><span class="num">2</span><h3>Drop in your files</h3><p>Beats, loops, demos. Write one message; <code>{name}</code> becomes each person's first name.</p></div>
-        <div class="card"><span class="num">3</span><h3>Send</h3><p>Buckshot sends each person their own message, one after another, from your own number or email.</p></div>
+        <div class="card"><span class="num">3</span><h3>Send</h3><p>Everyone gets their own message from your number or email. Your Mac does all the sending, so the whole list is done in moments, not an hour of copy-paste.</p></div>
       </div>
     </section>
 
     <section>
       <p class="eyebrow">What it does</p>
-      <h2>Made for sending beats, not for group chats.</h2>
-      <div class="grid">
+      <h2>Made for sending files, not for group chats.</h2>
+      <div class="card feature">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+        <div>
+          <h3>Never send the same beat twice</h3>
+          <p>Buckshot remembers every file you've sent to every person. Before anything goes out, it tells you who already has it, so nobody gets the same beat twice and you never look sloppy.</p>
+        </div>
+      </div>
+      <div class="grid three">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>See who opened it</h3><p>Turn on open tracking and Buckshot shows you who opened your email and when, so you know exactly who to follow up with.</p>
+        </div>
         <div class="card">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></div>
-          <h3>iMessage, email or both</h3><p>iMessages go through the Messages app on your Mac; email through Gmail or your own provider. Everyone gets one message.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div>
-          <h3>Personal every time</h3><p>Each message is written to one person, with their name in it. Nobody sees who else got it.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></div>
-          <h3>No double-sends</h3><p>Buckshot warns you if you've already sent a file to someone, before it goes out.</p>
+          <h3>Texts, email or both</h3><p>Texts go out through the Messages app on your Mac; email through Gmail or your own provider. Everyone gets one message.</p>
         </div>
         <div class="card">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h3>Schedule and follow up</h3><p>Schedule a send-out for later, and optionally see when someone opens your email.</p>
+          <h3>Schedule for later</h3><p>Set a send-out for the perfect moment and Buckshot sends it right on time, even with the app closed.</p>
         </div>
       </div>
     </section>
 
-    <section id="google">
-      <p class="eyebrow">Privacy</p>
-      <h2>Signing in with Google</h2>
-      <div class="card google">
-        <p>If you choose to send email from Gmail, Buckshot asks Google for permission to <strong>send email on your behalf</strong> (the <code>gmail.send</code> permission), plus your name and email address to show which account you're sending from. For files too big to attach (over 25 MB), it can put them in a “Buckshot” folder in your own Google Drive and link them in the email, like Gmail does; it can only touch files it created. Buckshot <strong>cannot read, search or delete your email</strong>. It only sends the messages you write, to the people you choose, when you press Send.</p>
-        <p>Your Google sign-in is also your Buckshot account: Buckshot's server keeps your email address and which plan you're on, nothing else. Everything else (your contacts, lists, drafts and history) stays on your Mac.</p>
-        <p><a href="privacy.html">Read the privacy policy</a></p>
-      </div>
+    <section id="privacy">
+      <details class="card google" id="google">
+        <summary>Privacy &amp; signing in with Google</summary>
+        <div class="body">
+          <p>If you choose to send email from Gmail, Buckshot asks Google for permission to <strong>send email on your behalf</strong> (the <code>gmail.send</code> permission), plus your name and email address to show which account you're sending from. For files too big to attach (over 25 MB), it can put them in a “Buckshot” folder in your own Google Drive and link them in the email, like Gmail does; it can only touch files it created. Buckshot <strong>cannot read, search or delete your email</strong>. It only sends the messages you write, to the people you choose, when you press Send.</p>
+          <p>Your Google sign-in is also your Buckshot account: Buckshot's server keeps your email address and which plan you're on, nothing else. Everything else (your contacts, lists, drafts and history) stays on your Mac.</p>
+          <p><a href="privacy.html">Read the privacy policy</a></p>
+        </div>
+      </details>
     </section>
   </main>
 
   <footer>
-    <span>Buckshot is made by Rocky. Questions: <a href="mailto:rockyshootingstar@gmail.com">rockyshootingstar@gmail.com</a></span>
+    <span>Contact: <a href="mailto:support@buckshotapp.com">support@buckshotapp.com</a></span>
     <span class="links"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a><a href="refunds.html">Refund policy</a></span>
   </footer>
 </div>

@@ -110,6 +110,35 @@
   still.addEventListener("change", () => still.matches ? draw(0) : requestAnimationFrame(loop));
   still.matches ? draw(0) : requestAnimationFrame(loop);
 
+  // Lifts the hero so its "Coming soon" pill sits halfway between the two strings around it
+  // (at their resting heights), whatever the window size. Layout positions only, so the fade-in doesn't skew it.
+  const badge = document.querySelector(".hero .badge"), chip = badge && badge.querySelector(".chip");
+  function align() {
+    if (!chip) return;
+    let top = 0;
+    for (let el = chip; el; el = el.offsetParent) top += el.offsetTop;
+    // Page position before any lift (offsetTop includes the hero's relative `top`).
+    const current = parseFloat(badge.parentElement.style.getPropertyValue("--lift")) || 0;
+    const centre = top - current + chip.offsetHeight / 2;     // page position (the strings are drawn for the top of the page)
+    const u = Math.min(1, Math.max(0, (chip.getBoundingClientRect().left + chip.offsetWidth / 2) / w));
+    let target = null;
+    for (let s = 0; s < STRINGS - 1; s++) {
+      const mid = (restingY(s, u) + restingY(s + 1, u)) / 2;
+      if (mid <= centre) target = mid;              // the nearest gap at or above where the pill is now
+    }
+    const lift = target === null ? 0 : Math.max(-140, target - centre);
+    badge.parentElement.style.setProperty("--lift", `${lift}px`);
+  }
+  align();
+  addEventListener("resize", align);
+  addEventListener("load", align);
+
+  // Links to #privacy open the privacy dropdown.
+  const privacy = document.getElementById("google");
+  const openPrivacy = () => { if (privacy && location.hash === "#privacy") privacy.open = true; };
+  addEventListener("hashchange", openPrivacy); openPrivacy();
+  document.querySelectorAll('a[href="#privacy"]').forEach(a => a.addEventListener("click", () => { if (privacy) privacy.open = true; }));
+
   setTimeout(() => pluck(ACCENT), 900);
   document.querySelectorAll(".pill.orange").forEach(el => el.addEventListener("mouseenter", () => pluck(ACCENT)));
   document.querySelectorAll(".card, .pill:not(.orange)").forEach((el, i) =>
