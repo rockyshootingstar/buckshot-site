@@ -3,16 +3,19 @@
 :root {
   --page: #faf5ed; --bar: rgba(250, 245, 237, 0.72); --card: rgba(255, 255, 255, 0.78);
   --edge: rgba(0, 0, 0, 0.08); --text: #1f1712; --muted: #6e6158; --soft: rgba(0, 0, 0, 0.05);
-  --accent: #e57a4f; --accent-text: #b8532b; --pill: rgba(0, 0, 0, 0.06); --pill-hover: rgba(0, 0, 0, 0.1);
+  --accent: #e57a4f; --modal: #fffaf3; --accent-text: #b8532b; --pill: rgba(0, 0, 0, 0.06); --pill-hover: rgba(0, 0, 0, 0.1);
   --shadow: 0 1px 2px rgba(60, 40, 20, 0.06), 0 8px 24px rgba(60, 40, 20, 0.06);
+  --clear: rgba(255, 255, 255, 0.72); --clear-edge: rgba(0, 0, 0, 0.08); --clear-hover: rgba(255, 255, 255, 0.95);
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
   :root {
+    --modal: #1c1512;
     --page: #120d0b; --bar: rgba(18, 13, 11, 0.6); --card: rgba(255, 255, 255, 0.045);
     --edge: rgba(255, 255, 255, 0.07); --text: #f3ece6; --muted: #a8998f; --soft: rgba(255, 255, 255, 0.05);
     --accent-text: #f0905f; --pill: rgba(255, 255, 255, 0.08); --pill-hover: rgba(255, 255, 255, 0.13);
     --shadow: none;
+    --clear: rgba(255, 255, 255, 0.13); --clear-edge: rgba(255, 255, 255, 0.16); --clear-hover: rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -43,11 +46,18 @@ code { font: 0.88em ui-monospace, "SF Mono", Menlo, monospace; background: var(-
 .pill {
   display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px;
   background: var(--pill); color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.92rem;
-  border: 0; transition: background .2s, transform .2s, filter .2s;
+  border: 0; transition: background 150ms ease, filter 150ms ease, opacity 150ms ease;
 }
-.pill:hover { background: var(--pill-hover); }
+.pill.clear {
+  background: var(--clear); color: var(--text); box-shadow: inset 0 0 0 1px var(--clear-edge);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+@media (hover: hover) {
+  .pill:hover { background: var(--pill-hover); }
+  .pill.clear:hover { background: var(--clear-hover); }
+}
 .pill.orange { background: var(--accent); color: #fff; }
-.pill.orange:hover { filter: brightness(1.08); }
+@media (hover: hover) { .pill.orange:hover { background: var(--accent); filter: brightness(1.08); } }
 .pill.big { padding: 13px 26px; font-size: 1.02rem; }
 .pill.small { padding: 6px 13px; font-size: 0.85rem; }
 .chip {
@@ -64,14 +74,13 @@ code { font: 0.88em ui-monospace, "SF Mono", Menlo, monospace; background: var(-
 }
 .hero .badge { display: flex; flex-direction: column; align-items: center; }
 .hero > * { position: relative; top: var(--lift, 0px); }   /* not transform: the fade-in animates that */
-/* The glow is a soft orange light behind the tile, not a filter on the image (filters blur a box in Safari). */
+/* A still, soft orange light shaped exactly like the icon's rounded tile (824/1024 of the image, 185 corners),
+   made with box-shadow so there's no filter and no blurred box. Decorative, so it doesn't animate. */
 .hero .glow { position: relative; margin-bottom: 18px; animation: rise .7s cubic-bezier(.2, .8, .2, 1) both; }
 .hero .glow::before {
-  content: ""; position: absolute; inset: 6%; border-radius: 30%; z-index: -1;
-  background: radial-gradient(closest-side, rgba(229, 122, 79, 0.55), rgba(229, 122, 79, 0.18) 55%, rgba(229, 122, 79, 0) 100%);
-  transform: scale(1.45); animation: breathe 6s ease-in-out infinite;
+  content: ""; position: absolute; inset: 9.77%; border-radius: 22.45%; z-index: -1;
+  box-shadow: 0 6px 34px 2px rgba(229, 122, 79, 0.30), 0 10px 80px 14px rgba(229, 122, 79, 0.12);
 }
-@keyframes breathe { 0%, 100% { opacity: .75; } 50% { opacity: 1; } }
 .hero .icon { display: block; width: 168px; height: 168px; }
 .hero h1 {
   font-size: clamp(2.4rem, 6.4vw, 4.6rem); line-height: 1.04; letter-spacing: -0.035em; font-weight: 800;
@@ -141,6 +150,37 @@ details .body { padding: 0 24px 22px; }
 .doc .card > :last-child { margin-bottom: 0; }
 .doc ul, .doc ol { padding-left: 22px; }
 .doc li { margin: 4px 0; }
+
+.modal {
+  width: min(460px, calc(100vw - 32px)); padding: 28px; border-radius: 22px; border: 1px solid var(--edge);
+  background: var(--modal); color: var(--text); box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  opacity: 0; transform: scale(.95) translateY(6px);
+  transition: opacity 180ms cubic-bezier(.165, .84, .44, 1), transform 180ms cubic-bezier(.165, .84, .44, 1),
+              overlay 180ms allow-discrete, display 180ms allow-discrete;
+}
+.modal[open] {
+  opacity: 1; transform: none;
+  transition-duration: 240ms;
+}
+@starting-style { .modal[open] { opacity: 0; transform: scale(.95) translateY(6px); } }
+.modal::backdrop { background: rgba(10, 6, 4, 0); transition: background 240ms ease, overlay 240ms allow-discrete, display 240ms allow-discrete; }
+.modal[open]::backdrop { background: rgba(10, 6, 4, 0.55); }
+@starting-style { .modal[open]::backdrop { background: rgba(10, 6, 4, 0); } }
+.modal .head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.modal .head img { width: 54px; height: 54px; margin: -5px; }
+.modal h2 { font-size: 1.35rem; letter-spacing: -0.02em; margin: 0; }
+.modal .tag { color: var(--accent-text); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.modal p { margin: 0 0 12px; color: var(--muted); font-size: 0.97rem; }
+.modal p strong { color: var(--text); }
+.modal .agree {
+  display: flex; align-items: center; gap: 12px; margin: 18px 0 20px; padding: 14px 16px; border-radius: 14px;
+  background: var(--soft); cursor: pointer; font-weight: 600; user-select: none;
+}
+.modal .agree input { width: 20px; height: 20px; margin: 0; accent-color: var(--accent); cursor: pointer; flex: none; }
+.modal .buttons { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+.modal .pill { cursor: pointer; font-family: inherit; }
+.modal .pill[aria-disabled="true"] { opacity: 0.4; pointer-events: none; }
+.modal .small { font-size: 0.85rem; margin: 16px 0 0; text-align: center; }
 
 footer {
   position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; padding: 32px 16px 48px;

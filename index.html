@@ -31,13 +31,13 @@
     <div class="hero">
       <div class="badge">
         <div class="glow"><picture><source srcset="icon-light.png" media="(prefers-color-scheme: light)"><img class="icon" src="icon-dark.png" alt="Buckshot app icon"></picture></div>
-        <span class="chip"><span class="dot"></span>For Mac · Coming soon</span>
+        <span class="chip"><span class="dot"></span>For Mac · Private beta</span>
       </div>
       <h1>Send to everyone. <em>One message each.</em></h1>
-      <p class="lede">Buckshot is a Mac app for producers and musicians. Pick a list, drop in your beats, and everyone on it gets their own individual message, by text or email depending on the contact info you have for them.</p>
+      <p class="lede">Buckshot is a Mac app for producers &amp; musicians. Pick a list, drop your files, hit send. Everyone gets their own message, by text or email, based on the contact info you have.</p>
       <div class="actions">
-        <a class="pill orange big" href="#how">See how it works</a>
-        <a class="pill big" href="#privacy">Privacy</a>
+        <a class="pill clear big" href="#how">See how it works</a>
+        <a class="pill orange big" href="beta.html" id="download">Download</a>
       </div>
     </div>
 
@@ -94,6 +94,36 @@
     <span class="links"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a><a href="refunds.html">Refund policy</a></span>
   </footer>
 </div>
+<dialog class="modal" id="beta">
+  <div class="head">
+    <picture><source srcset="icon-light.png" media="(prefers-color-scheme: light)"><img src="icon-dark.png" alt=""></picture>
+    <div><div class="tag">Private beta</div><h2>Before you download</h2></div>
+  </div>
+  <p>Buckshot is in a <strong>private test</strong>. It isn't a fully released app yet, so it's very possible you'll run into a bug.</p>
+  <p>If something goes wrong or you have an idea, click <strong>Report Issue / Feedback</strong> at the top of Buckshot. It goes straight to us and helps us fix it fast.</p>
+  <label class="agree"><input type="checkbox" id="understand"> I understand</label>
+  <div class="buttons">
+    <button class="pill clear" type="button" id="cancel">Cancel</button>
+    <a class="pill orange" id="get" aria-disabled="true" href="https://github.com/rockyshootingstar/buckshot-site/releases/latest/download/Buckshot.dmg">Download for Mac</a>
+  </div>
+  <p class="small">For macOS 14 or later. <a href="beta.html">Install steps</a></p>
+</dialog>
+<script>
+  // Download opens the beta notice; the real download unlocks once "I understand" is ticked.
+  (function () {
+    const dialog = document.getElementById("beta"), box = document.getElementById("understand"), get = document.getElementById("get");
+    if (!dialog.showModal) return;                       // very old browsers: the button just goes to the beta page
+    document.getElementById("download").addEventListener("click", e => { e.preventDefault(); box.checked = false; sync(); dialog.showModal(); });
+    document.getElementById("cancel").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", e => {          // a click outside the card closes it
+      const r = dialog.getBoundingClientRect();
+      if (e.target === dialog && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)) dialog.close();
+    });
+    function sync() { get.setAttribute("aria-disabled", box.checked ? "false" : "true"); get.tabIndex = box.checked ? 0 : -1; }
+    box.addEventListener("change", sync);
+    get.addEventListener("click", e => { if (!box.checked) e.preventDefault(); else setTimeout(() => dialog.close(), 400); });
+  })();
+</script>
 <script src="strings.js"></script>
 </body>
 </html>
