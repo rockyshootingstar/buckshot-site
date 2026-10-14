@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 155)</title>
+      <pubDate>Tue, 13 Oct 2026 19:40:38 -0700</pubDate>
+      <sparkle:version>155</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>Importing from Apple Contacts is now instant (tick who you want), and every button has a smoother press animation.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-155/Buckshot-0.5-155.zip" type="application/octet-stream" sparkle:edSignature="PaV72DXQRv4ZFyobeY/ZrNP0kFKmid+JkHSaQeG2WBestd4KPpS3Md3YKtPvvXxcHT/iw0fg7HotHA6D8DFvBQ==" length="7621214" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 154)</title>
       <pubDate>Tue, 13 Oct 2026 10:17:19 -0700</pubDate>
       <sparkle:version>154</sparkle:version>
