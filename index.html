@@ -7,41 +7,87 @@
 <meta name="google-site-verification" content="kDCfQ31Z-s-OFbejdX-DfELHmd-o-8pSM5kBamtCZ9k" />
 <title>Buckshot</title>
 <meta name="description" content="Buckshot is a Mac app that sends your files to a list of people, each as their own individual iMessage or email.">
-<link rel="icon" href="icon.png">
+<meta name="theme-color" content="#faf5ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#120d0b" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Buckshot">
+<meta property="og:description" content="Send your beats to everyone, one message each. A Mac app for producers.">
+<meta property="og:image" content="https://buckshotapp.com/icon-dark.png">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <header>
-    <img src="icon.png" alt="Buckshot app icon">
-    <div>
-      <h1>Buckshot</h1>
-      <p class="muted" style="margin:0">Send files to your people, one individual message each.</p>
+<canvas id="strings" aria-hidden="true"></canvas>
+<div class="wrap">
+  <div class="nav">
+    <a class="brand" href="./"><picture><source srcset="icon-light.png" media="(prefers-color-scheme: light)"><img src="icon-dark.png" alt=""></picture>Buckshot</a>
+    <nav>
+      <a class="pill small hide-small" href="#how">How it works</a>
+      <a class="pill small" href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+
+  <main>
+    <div class="hero">
+      <picture><source srcset="icon-light.png" media="(prefers-color-scheme: light)"><img class="icon" src="icon-dark.png" alt="Buckshot app icon"></picture>
+      <span class="chip"><span class="dot"></span>For Mac · Coming soon</span>
+      <h1>Send to everyone. <em>One message each.</em></h1>
+      <p class="lede">Buckshot is a Mac app for producers and creators. Pick a list, drop in your beats, and every artist gets their own iMessage or email. No group chats, no reply-all.</p>
+      <div class="actions">
+        <a class="pill orange big" href="#how">See how it works</a>
+        <a class="pill big" href="#google">Privacy &amp; Google sign-in</a>
+      </div>
     </div>
-  </header>
 
-  <p>Buckshot is a small Mac app for musicians and creators who send the same files (beats, loops, demos) to lots of collaborators. Pick a list, write a message, drop in your files, and Buckshot sends <strong>each person their own individual message</strong> by iMessage or email. No group chats, no reply-all.</p>
+    <section id="how">
+      <p class="eyebrow">How it works</p>
+      <h2>One send-out. Every person gets it on their own.</h2>
+      <div class="steps">
+        <div class="card"><span class="num">1</span><h3>Pick a list</h3><p>Keep your collaborators in lists, like “pain loops” or “trap beats”.</p></div>
+        <div class="card"><span class="num">2</span><h3>Drop in your files</h3><p>Beats, loops, demos. Write one message; <code>{name}</code> becomes each person's first name.</p></div>
+        <div class="card"><span class="num">3</span><h3>Send</h3><p>Buckshot sends each person their own message, one after another, from your own number or email.</p></div>
+      </div>
+    </section>
 
-  <div class="card">
-    <h2 style="margin-top:0">What it does</h2>
-    <ul>
-      <li>Keeps your collaborators in lists, like “pain loops” or “trap beats”.</li>
-      <li>Sends one personal message per person, with <code>{name}</code> filled in with their first name.</li>
-      <li>Sends by iMessage (through the Messages app on your Mac), by email, or both. Everyone gets one message.</li>
-      <li>Warns you if you've already sent a file to someone.</li>
-    </ul>
-  </div>
+    <section>
+      <p class="eyebrow">What it does</p>
+      <h2>Made for sending beats, not for group chats.</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></div>
+          <h3>iMessage, email or both</h3><p>iMessages go through the Messages app on your Mac; email through Gmail or your own provider. Everyone gets one message.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div>
+          <h3>Personal every time</h3><p>Each message is written to one person, with their name in it. Nobody sees who else got it.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+          <h3>No double-sends</h3><p>Buckshot warns you if you've already sent a file to someone, before it goes out.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Schedule and follow up</h3><p>Schedule a send-out for later, and optionally see when someone opens your email.</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="card">
-    <h2 style="margin-top:0">Signing in with Google</h2>
-    <p>If you choose to send email from Gmail, Buckshot asks Google for permission to <strong>send email on your behalf</strong> (the <code>gmail.send</code> permission), plus your name and email address to show which account you're sending from. For files too big to attach (over 25 MB), it can put them in a “Buckshot” folder in your own Google Drive and link them in the email, like Gmail does; it can only touch files it created. Buckshot <strong>cannot read, search or delete your email</strong>. It only sends the messages you write, to the people you choose, when you press Send.</p>
-    <p>Your Google sign-in is also your Buckshot account: Buckshot's server keeps your email address and which plan you're on, nothing else. Everything else (your contacts, lists, drafts and history) stays on your Mac.</p>
-    <p><a href="privacy.html">Read the privacy policy</a></p>
-  </div>
+    <section id="google">
+      <p class="eyebrow">Privacy</p>
+      <h2>Signing in with Google</h2>
+      <div class="card google">
+        <p>If you choose to send email from Gmail, Buckshot asks Google for permission to <strong>send email on your behalf</strong> (the <code>gmail.send</code> permission), plus your name and email address to show which account you're sending from. For files too big to attach (over 25 MB), it can put them in a “Buckshot” folder in your own Google Drive and link them in the email, like Gmail does; it can only touch files it created. Buckshot <strong>cannot read, search or delete your email</strong>. It only sends the messages you write, to the people you choose, when you press Send.</p>
+        <p>Your Google sign-in is also your Buckshot account: Buckshot's server keeps your email address and which plan you're on, nothing else. Everything else (your contacts, lists, drafts and history) stays on your Mac.</p>
+        <p><a href="privacy.html">Read the privacy policy</a></p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    Buckshot is made by Rocky. Questions: <a href="mailto:rockyshootingstar@gmail.com">rockyshootingstar@gmail.com</a> · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a> · <a href="refunds.html">Refund policy</a>
+    <span>Buckshot is made by Rocky. Questions: <a href="mailto:rockyshootingstar@gmail.com">rockyshootingstar@gmail.com</a></span>
+    <span class="links"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a><a href="refunds.html">Refund policy</a></span>
   </footer>
-</main>
+</div>
+<script src="strings.js"></script>
 </body>
 </html>

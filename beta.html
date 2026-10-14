@@ -7,30 +7,33 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Buckshot Beta</title>
 <meta name="description" content="Download the latest Buckshot beta for Mac.">
-<link rel="icon" href="icon.png">
+<meta name="theme-color" content="#faf5ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#120d0b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
-<style>
-  .download { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600;
-    padding: 12px 26px; border-radius: 999px; font-size: 1.05rem; }
-  .download:hover { filter: brightness(1.08); }
-  ol li { margin: 6px 0; }
-</style>
 </head>
 <body>
-<main>
-  <header>
-    <img src="icon.png" alt="Buckshot app icon">
-    <div>
-      <h1>Buckshot Beta</h1>
-      <p class="muted" style="margin:0">Thanks for testing! For Mac (macOS 14 or later).</p>
-    </div>
-  </header>
+<canvas id="strings" aria-hidden="true"></canvas>
+<div class="wrap">
+  <div class="nav">
+    <a class="brand" href="./"><picture><source srcset="icon-light.png" media="(prefers-color-scheme: light)"><img src="icon-dark.png" alt=""></picture>Buckshot</a>
+    <nav>
+      <a class="pill small" href="./">Home</a>
+    </nav>
+  </div>
 
-  <p><a class="download" href="https://github.com/rockyshootingstar/buckshot-site/releases/latest/download/Buckshot.dmg">Download for Mac</a></p>
-  <p class="muted">Always the newest version. Once it's installed, Buckshot updates itself.</p>
+  <main class="doc">
+    <header style="text-align:center">
+      <picture><source srcset="icon-light.png" media="(prefers-color-scheme: light)"><img src="icon-dark.png" alt="Buckshot app icon" style="width:136px;height:136px;filter:drop-shadow(0 16px 36px rgba(229,122,79,.22))"></picture>
+      <h1>Buckshot Beta</h1>
+      <p>Thanks for testing! For Mac (macOS 14 or later).</p>
+      <p style="margin-top:22px"><a class="pill orange big" href="https://github.com/rockyshootingstar/buckshot-site/releases/latest/download/Buckshot.dmg">Download for Mac</a></p>
+      <p style="margin-top:12px;font-size:.9rem">Always the newest version. Once it's installed, Buckshot updates itself.</p>
+    </header>
 
   <div class="card">
-    <h2 style="margin-top:0">Installing</h2>
+    <h2>Installing</h2>
     <ol>
       <li>Open the downloaded <strong>Buckshot.dmg</strong> and drag Buckshot onto the Applications folder.</li>
       <li>Open Buckshot from Applications. The first time, your Mac may say it can't be opened (Buckshot isn't sold through Apple). That's expected:
@@ -47,7 +50,15 @@
 
   <p>Found a bug or have an idea? Click <strong>Report Issue / Feedback</strong> at the top of Buckshot.</p>
 
-  <footer><a href="index.html">Buckshot home</a> · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a></footer>
-</main>
+
+    <p style="text-align:center;color:var(--muted);margin-top:22px">Found a bug or have an idea? Click <strong>Report Issue / Feedback</strong> at the top of Buckshot.</p>
+  </main>
+
+  <footer>
+    <span>Buckshot is made by Rocky. Questions: <a href="mailto:rockyshootingstar@gmail.com">rockyshootingstar@gmail.com</a></span>
+    <span class="links"><a href="./">Buckshot home</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a></span>
+  </footer>
+</div>
+<script src="strings.js"></script>
 </body>
 </html>
