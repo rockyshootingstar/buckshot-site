@@ -14,11 +14,11 @@
     <img src="icon.png" alt="Buckshot app icon">
     <div>
       <h1>Privacy Policy</h1>
-      <p class="muted" style="margin:0">Buckshot for Mac · Last updated September 30, 2026</p>
+      <p class="muted" style="margin:0">Buckshot for Mac · Last updated October 14, 2026</p>
     </div>
   </header>
 
-  <p><strong>Short version:</strong> Buckshot runs on your Mac. It has no ads and no accounts of its own. Your contacts, messages and files are never sent to the developer or to anyone other than the people you choose to message. The only things that reach Buckshot's small server are optional email open tracking and anonymous usage counts, both described below, and both can be turned off.</p>
+  <p><strong>Short version:</strong> Buckshot runs on your Mac and has no ads. Your contacts, messages and files are never sent to the developer or to anyone other than the people you choose to message. Buckshot's small server only keeps your account (your email address and plan), a count of how many send-outs you make each week, optional email open tracking and anonymous usage counts, all described below.</p>
 
   <h2>What Buckshot stores, and where</h2>
   <ul>
@@ -32,11 +32,20 @@
   <p>If you sign in with Google to send email from Gmail, Buckshot requests these permissions:</p>
   <ul>
     <li><strong>Send email on your behalf</strong> (<code>https://www.googleapis.com/auth/gmail.send</code>): used only to send the messages and attachments you write in Buckshot, to the recipients you pick, when you press Send.</li>
-    <li><strong>Your name and email address</strong> (<code>openid</code>, <code>email</code>, <code>profile</code>): used only to show which account you're sending from and to put your name in the From line.</li>
+    <li><strong>Your name and email address</strong> (<code>openid</code>, <code>email</code>, <code>profile</code>): used to show which account you're sending from, to put your name in the From line, and as your Buckshot account. Buckshot's server receives your email address (and Google's proof that it's yours) so it can look up your plan. See “Your Buckshot account” below.</li>
     <li><strong>Files Buckshot creates in your Google Drive</strong> (<code>https://www.googleapis.com/auth/drive.file</code>): used only when your files are too big to attach to an email (over Gmail's 25 MB limit). Buckshot uploads those files to a “Buckshot” folder in your own Drive, shares them so anyone with the link can view them, and puts the link in the email, the same way Gmail handles large attachments. This permission only covers files Buckshot itself created: Buckshot can't see, open or change any other file in your Drive. The uploaded files stay in your Drive until you delete them.</li>
   </ul>
-  <p>Buckshot <strong>does not</strong> read, search, download, change or delete any of your email, contacts or other Google data. It does not store the content of your Gmail account. Your Google data is never sent to the developer, never sold, never used for advertising, and never shared with or transferred to anyone. The only exception is that the messages you send go to the recipients you chose, through Google.</p>
+  <p>Buckshot <strong>does not</strong> read, search, download, change or delete any of your email, contacts or other Google data. It does not store the content of your Gmail account. Apart from your email address being used as your Buckshot account, your Google data is never sent to the developer. It is never sold, never used for advertising, and never shared with or transferred to anyone, except that the messages you send go to the recipients you chose, through Google.</p>
   <p>Buckshot's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <h2>Your Buckshot account and plan</h2>
+  <p>Buckshot uses the Google account you sign in with as your Buckshot account; there's no separate password. Buckshot's server stores:</p>
+  <ul>
+    <li><strong>Your email address</strong> and <strong>your plan</strong> (free, trial, subscription or lifetime, and when it renews or ends).</li>
+    <li><strong>How many send-outs you've made each week, and how many people each went to</strong>, so the free plan's limits can be applied. Only the numbers are stored: never who you sent to, what you wrote, or which files.</li>
+  </ul>
+  <p><strong>Payments</strong> are handled by our reseller and merchant of record, <a href="https://www.paddle.com">Paddle</a>. Paddle collects your payment details under its own <a href="https://www.paddle.com/legal/privacy">privacy policy</a>; Buckshot never sees your card number. Paddle tells Buckshot's server which email address bought which plan, and when a subscription renews, changes or ends.</p>
+  <p>We keep this information while you have a Buckshot account and delete it on request (see Contact below).</p>
 
   <h2>iMessage</h2>
   <p>iMessages are sent by the Messages app on your Mac, using your own Apple account. Buckshot asks macOS for permission to control Messages for this purpose only.</p>
@@ -52,6 +61,7 @@
   <h2>Removing your data</h2>
   <ul>
     <li><strong>Disconnect Google:</strong> in Buckshot, open Settings ▸ Email ▸ Sign Out. This deletes the sign-in token from your Keychain. You can also remove Buckshot's access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+    <li><strong>Delete your account:</strong> email us (below) from the address you sign in with, and we'll delete your account and plan from Buckshot's server.</li>
     <li><strong>Delete everything else:</strong> quit Buckshot and delete the folder <code>~/Library/Application Support/Buckshot</code>, then delete the app.</li>
   </ul>
 
@@ -64,7 +74,7 @@
   <h2>Contact</h2>
   <p>Rocky · <a href="mailto:rockyshootingstar@gmail.com">rockyshootingstar@gmail.com</a></p>
 
-  <footer><a href="index.html">Buckshot home</a></footer>
+  <footer><a href="index.html">Buckshot home</a> · <a href="terms.html">Terms of service</a> · <a href="refunds.html">Refund policy</a></footer>
 </main>
 </body>
 </html>
