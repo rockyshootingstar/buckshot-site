@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 164)</title>
+      <pubDate>Thu, 15 Oct 2026 08:13:40 -0700</pubDate>
+      <sparkle:version>164</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>Anonymous usage counts now include a few more actions (like scheduling or making a drip) so Rocky can see how each tester uses Buckshot. You show up only as a number, never your name or email. Turn it off in Settings.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-164/Buckshot-0.5-164.zip" type="application/octet-stream" sparkle:edSignature="sspTTrmuq7g4uZ7+6jL0CI9dzvuik8ap8vtyFrbFmy2feYbGdfi382CIIZ9kO5R0zzbucpcW9bahvHnQhzLRBA==" length="7772800" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 163)</title>
       <pubDate>Thu, 15 Oct 2026 08:03:40 -0700</pubDate>
       <sparkle:version>163</sparkle:version>
