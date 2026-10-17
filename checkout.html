@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buckshot Checkout</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#faf5ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#120d0b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="strings" aria-hidden="true"></canvas>
+<div class="wrap">
+  <div class="nav">
+    <a class="brand" href="./"><picture><source srcset="icon-light.png" media="(prefers-color-scheme: light)"><img src="icon-dark.png" alt=""></picture>Buckshot</a>
+    <nav>
+      <a class="pill small" href="./#pricing">Pricing</a>
+    </nav>
+  </div>
+  <main class="checkout">
+    <h1>Get Buckshot</h1>
+    <p class="lede" id="intro">Pick a plan. Checkout is secure and handled by Paddle, our reseller.</p>
+    <div class="choices" id="choices">
+      <button class="pill" data-choice="monthly">Monthly</button>
+      <button class="pill" data-choice="yearly">Yearly</button>
+      <button class="pill" data-choice="lifetime">Lifetime</button>
+    </div>
+    <div class="card">
+      <p id="summary">Loading prices…</p>
+      <p class="status" id="who"></p>
+    </div>
+    <p class="status" id="status"></p>
+    <p><button class="pill orange big" id="pay" disabled>Continue to Checkout</button></p>
+    <p class="fine">Have a trial code? Enter it on the next screen. Prices in US dollars; taxes may apply. <a href="refunds.html">Refund policy</a></p>
+  </main>
+  <footer>
+    <span>Contact: <a href="mailto:support@buckshotapp.com">support@buckshotapp.com</a></span>
+    <span class="links"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a><a href="refunds.html">Refund policy</a></span>
+  </footer>
+</div>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+// Checkout: ?plan=monthly|yearly|lifetime, and ?a=<token> when opened from the Buckshot app (ties the purchase to
+// that Buckshot account). Prices, Paddle's client token and price ids all come from api.buckshotapp.com/v1/config.
+(async function () {
+  const API = "https://api.buckshotapp.com";
+  const params = new URLSearchParams(location.search);
+  const account = params.get("a");
+  let plan = ["monthly", "yearly", "lifetime"].includes(params.get("plan")) ? params.get("plan") : "yearly";
+  const $ = id => document.getElementById(id);
+  const money = n => "$" + Number(n).toFixed(2);
+
+  let config = null, email = null;
+  try { config = await (await fetch(API + "/v1/config")).json(); } catch {}
+  if (account) {
+    try {
+      const res = await fetch(API + "/v1/checkout-info?a=" + encodeURIComponent(account));
+      const info = await res.json();
+      if (res.ok) email = info.email; else $("status").textContent = info.message || "This link has expired. Open it again from Buckshot.";
+    } catch {}
+  }
+  $("who").textContent = email
+    ? `For your Buckshot account: ${email}`
+    : "Use the same email as the Google account you sign in to Buckshot with, so the app finds your plan.";
+
+  const ready = !!(config && config.paddle && config.paddle.clientToken);
+  if (ready) {
+    if (config.paddle.environment !== "production") Paddle.Environment.set("sandbox");
+    Paddle.Initialize({
+      token: config.paddle.clientToken,
+      eventCallback: e => { if (e.name === "checkout.completed") location.href = "thanks.html"; },
+    });
+  }
+
+  function show() {
+    document.querySelectorAll("[data-choice]").forEach(b => b.classList.toggle("on", b.dataset.choice === plan));
+    if (!config) { $("summary").textContent = "Couldn't load prices. Check your connection and refresh."; return; }
+    const p = config.plans[plan], f = config.founder;
+    const founder = plan === "lifetime" ? f.lifetimeOpen : f.subscriptionsOpen;
+    const per = p.interval === "month" ? " a month" : p.interval === "year" ? " a year" : " once";
+    $("summary").innerHTML = `<strong>Buckshot ${p.label}</strong>: ${money(founder ? p.founderPrice : p.price)}${per}` +
+      (founder ? ` <s>${money(p.price)}</s> (founder price${p.interval ? ", kept for as long as you stay subscribed" : ""})` : "") +
+      (p.interval ? ". Cancel any time." : ". Pay once, keep it.");
+    $("pay").disabled = !ready;
+    if (!ready) $("status").textContent = "Checkout isn't open yet. It opens when Buckshot launches.";
+  }
+  document.querySelectorAll("[data-choice]").forEach(b => b.addEventListener("click", () => { plan = b.dataset.choice; show(); }));
+  $("pay").addEventListener("click", () => {
+    const priceId = config.paddle.checkout[plan];
+    if (!priceId) { $("status").textContent = "That plan isn't available right now."; return; }
+    Paddle.Checkout.open({
+      items: [{ priceId, quantity: 1 }],
+      customer: email ? { email } : undefined,
+      customData: account ? { account } : undefined,
+      settings: { displayMode: "overlay", theme: matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
+                  successUrl: location.origin + "/thanks.html" },
+    });
+  });
+  show();
+})();
+</script>
+<script src="strings.js"></script>
+</body>
+</html>
