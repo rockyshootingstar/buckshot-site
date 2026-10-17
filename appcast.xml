@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 169)</title>
+      <pubDate>Sat, 17 Oct 2026 15:46:03 -0700</pubDate>
+      <sparkle:version>169</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>After a send-out, Buckshot can ask what got in the way (optional, Skip closes it). Anonymous usage stats now include the app and macOS versions and send-out error types, so problems get fixed faster.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-169/Buckshot-0.5-169.zip" type="application/octet-stream" sparkle:edSignature="taysnZvhALr/h4ZypWJUOAQQsSj4Ep6NWKTFOAu9gh//MapBhwNTX3GJiYLpck+0PIuMPTT4uyOwuzNZxiRBDA==" length="8010798" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 164)</title>
       <pubDate>Thu, 15 Oct 2026 08:13:40 -0700</pubDate>
       <sparkle:version>164</sparkle:version>
