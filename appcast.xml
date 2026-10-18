@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 172)</title>
+      <pubDate>Sat, 17 Oct 2026 20:15:09 -0700</pubDate>
+      <sparkle:version>172</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>Buckshot accounts: sign in with Google (Gmail users are signed in automatically; other email providers sign in once, name and email only). New Settings ▸ Account shows your plan. Everything stays unlimited during the beta.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-172/Buckshot-0.5-172.zip" type="application/octet-stream" sparkle:edSignature="Rx7esxdAaLbE93IMHQNnphiaObdxr/qA03pV0UQ6ymq1+i1fHm22G0sSc3VGrunHcVhGDALDUszrtIKo7rqSDg==" length="8492298" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 169)</title>
       <pubDate>Sat, 17 Oct 2026 15:46:03 -0700</pubDate>
       <sparkle:version>169</sparkle:version>
