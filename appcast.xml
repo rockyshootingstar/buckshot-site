@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 174)</title>
+      <pubDate>Sat, 17 Oct 2026 20:37:09 -0700</pubDate>
+      <sparkle:version>174</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>Send-outs with an email subject now use the subject as their title on Home, Send-Outs and the sidebar.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-174/Buckshot-0.5-174.zip" type="application/octet-stream" sparkle:edSignature="hhiMjMaTwCWHoOHWSPB/jfzz4T+PvyX5W/3uMIL0RAGRcq+G47GmidQ2eM3+oay6ANupv6U2dmrLn3ThGVzXBg==" length="8493874" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 172)</title>
       <pubDate>Sat, 17 Oct 2026 20:15:09 -0700</pubDate>
       <sparkle:version>172</sparkle:version>
