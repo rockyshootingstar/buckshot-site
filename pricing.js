@@ -12,6 +12,8 @@
       const value = config.free[el.dataset.free];
       if (value != null) el.textContent = value;
     });
+    const rest = document.getElementById("free-rest");
+    if (rest) rest.textContent = config.free.drips ? "Every other feature" : "Everything else except Drips";
     const f = config.founder;
     document.querySelectorAll("[data-plan]").forEach(card => {
       const plan = config.plans[card.dataset.plan];
