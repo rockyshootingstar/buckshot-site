@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 190)</title>
+      <pubDate>Mon, 19 Oct 2026 06:34:57 -0700</pubDate>
+      <sparkle:version>190</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>The To field now suggests people you&#x27;ve emailed in Gmail as you type, like Gmail does (hide any with the ×; manage them in Settings ▸ Email). New: Import from Gmail on the Contacts page, and an optional switch to suggest Apple Contacts. Also: the tab bar no longer covers pages, and button text stays centred.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-190/Buckshot-0.5-190.zip" type="application/octet-stream" sparkle:edSignature="jCXQ6ESQsGqjpJ7m2j+ztsP3ztxECa5kvYOTuPMLGA08vn5siHB69szPN/LkEYPW2hNDnLVKUy+b46Pj+HtRAA==" length="8753001" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 174)</title>
       <pubDate>Sat, 17 Oct 2026 20:37:09 -0700</pubDate>
       <sparkle:version>174</sparkle:version>
