@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 192)</title>
+      <pubDate>Tue, 20 Oct 2026 18:38:08 -0700</pubDate>
+      <sparkle:version>192</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>People you&#x27;ve emailed from Gmail now show up as suggestions in the To field right away, even before you pick Email. Clearer wording about Gmail permissions in Welcome, About and Settings.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-192/Buckshot-0.5-192.zip" type="application/octet-stream" sparkle:edSignature="Ai1sJmPb2Taevz5+Oy9/RLt1pGAx7YCE2EOoVupAf0g0fld+BmWicIab2GtctzP7v+Ot4doDPU3eMRIJugO4Aw==" length="8751975" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 190)</title>
       <pubDate>Mon, 19 Oct 2026 06:34:57 -0700</pubDate>
       <sparkle:version>190</sparkle:version>
