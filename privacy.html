@@ -24,7 +24,7 @@
   <main class="doc">
     <header>
       <h1>Privacy Policy</h1>
-      <p>Buckshot for Mac · Last updated October 19, 2026</p>
+      <p>Buckshot for Mac · Last updated October 20, 2026</p>
     </header>
     <div class="card">
 
@@ -48,6 +48,18 @@
   </ul>
   <p>Apart from the names and email addresses of your “Other contacts” described above, Buckshot <strong>does not</strong> read, search, download, change or delete any of your email, saved contacts or other Google data. It cannot read your inbox, and it does not store the content of your Gmail account. Apart from your email address being used as your Buckshot account, your Google data is never sent to the developer or to Buckshot's server. It is never sold, never used for advertising, and never shared with or transferred to anyone, except that the messages you send go to the recipients you chose, through Google.</p>
   <p>Buckshot's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <h2>How your data is protected</h2>
+  <p>Buckshot protects your Google user data and other sensitive data in these ways:</p>
+  <ul>
+    <li><strong>Kept on your Mac:</strong> your email, contacts, “Other contacts”, files and Drive files are never copied to Buckshot's server or to the developer. Google data goes straight from Google to your Mac and is used there.</li>
+    <li><strong>Encrypted in transit:</strong> every connection Buckshot makes, to Google and to Buckshot's server, uses HTTPS (TLS encryption). Buckshot doesn't allow unencrypted connections.</li>
+    <li><strong>Secure sign-in:</strong> Google sign-in uses Google's own page in your web browser with OAuth 2.0 and PKCE, so Buckshot never sees your Google password. The sign-in token is stored encrypted in the macOS Keychain, which only Buckshot can read, never in a plain file, and is deleted when you sign out.</li>
+    <li><strong>Least access:</strong> Buckshot asks only for the narrowest Google permissions it needs: it can send email but not read your inbox, can see only the Drive files it created, and reads only the names and email addresses of your “Other contacts”. It never changes or deletes anything in your Google account.</li>
+    <li><strong>Protected on your Mac:</strong> data Buckshot saves stays in your user account's folder, protected by your Mac login, and by FileVault disk encryption if you have it turned on. Buckshot runs with macOS's Hardened Runtime, which stops other code from tampering with it. “Other contacts” are kept in memory only while Buckshot is open.</li>
+    <li><strong>Buckshot's server:</strong> the server holds only your account email address, your plan and the counts described below, never Google data such as email, contacts or files. It is hosted on Cloudflare, which encrypts stored data, checks Google's proof of who you are before giving out any account information, and is accessible only to the developer.</li>
+    <li><strong>No sharing or selling:</strong> no person reads your Google data, and it is never sold, used for advertising, or used to train AI models.</li>
+  </ul>
 
   <h2>Your Buckshot account and plan</h2>
   <p>Buckshot uses the Google account you sign in with as your Buckshot account; there's no separate password. Buckshot's server stores:</p>
