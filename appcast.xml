@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 215)</title>
+      <pubDate>Mon, 26 Oct 2026 05:23:45 -0700</pubDate>
+      <sparkle:version>215</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>Files and your message now arrive together on iMessage, with upload progress while it sends. Click a person in the To field to add them to Contacts or edit them right there. New send-outs are titled “New Send-Out” until you type a message or subject. Scheduled send-outs go out on time with a closed, plugged-in Mac and wait for the files to finish uploading; laptops get a clear reminder to stay plugged in. Search in the import windows, and the message preview now matches the iMessage or Email tab you&#x27;re on.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-215/Buckshot-0.5-215.zip" type="application/octet-stream" sparkle:edSignature="DvvNEK7VmJdQFMOWhO8+p9yKon2DXoANlygrOj8dVLCczUv7tKxFVet0muvyJbbQRZkddGxj9CDL5Ei2RcNXBA==" length="9012679" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 204)</title>
       <pubDate>Wed, 21 Oct 2026 09:11:11 -0700</pubDate>
       <sparkle:version>204</sparkle:version>
