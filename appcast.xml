@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 228)</title>
+      <pubDate>Wed, 28 Oct 2026 04:19:00 -0700</pubDate>
+      <sparkle:version>228</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>Cleaner pages: removed extra subtitles on Home, Send-Outs, Settings and send-out pages. Right-click any send-out to delete it from history.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-228/Buckshot-0.5-228.zip" type="application/octet-stream" sparkle:edSignature="Lc+vRB3d1+0vDgZrkEOLNLFAPylkg8en916OH1mwMY6kc6WDH/ubgRgEgBldIzKQR4B93VBH4UUIx7A3AUAtAw==" length="9198218" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 222)</title>
       <pubDate>Wed, 28 Oct 2026 03:14:28 -0700</pubDate>
       <sparkle:version>222</sparkle:version>
