@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 221)</title>
+      <pubDate>Wed, 28 Oct 2026 03:05:13 -0700</pubDate>
+      <sparkle:version>221</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>Click someone&#x27;s Opened pill on a send-out to see every open: when, which mail app, and how sure it was really them. Swipe with two fingers to go back and forward between pages, like Safari. Buckshot now reminds you to keep your Mac plugged in the day before a scheduled send-out.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-221/Buckshot-0.5-221.zip" type="application/octet-stream" sparkle:edSignature="kgwGNKNERDTzVRlGylem9XoamtD6L+bk2aM4ie6cC4z2OkKSRj7dP0Zk4JBniMzggc7S9Gn9M4mDjlkAQ++IDg==" length="9205405" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 215)</title>
       <pubDate>Mon, 26 Oct 2026 05:23:45 -0700</pubDate>
       <sparkle:version>215</sparkle:version>
