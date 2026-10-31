@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 231)</title>
+      <pubDate>Fri, 30 Oct 2026 20:19:07 -0700</pubDate>
+      <sparkle:version>231</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>Clearer statuses: emails show Delivered as soon as Gmail accepts them, iMessages show Sent then Delivered, and &quot;Probably opened&quot; replaces &quot;Opened – likely human&quot;. Hover any status to see what it means.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-231/Buckshot-0.5-231.zip" type="application/octet-stream" sparkle:edSignature="qOv96w8cs7u2/R6VRmaztd76LZBNJxbhd/u9vLVv4cMSCW+7cAzoDHx9/nph48S9X8OH6z5O+wD3w17xGjqCCA==" length="9209443" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 228)</title>
       <pubDate>Wed, 28 Oct 2026 04:19:00 -0700</pubDate>
       <sparkle:version>228</sparkle:version>
