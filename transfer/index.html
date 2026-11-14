@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buckshot Phone Transfers</title>
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#faf5ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#120d0b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .hop { min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 14px; padding: 24px; }
+  .hop img { width: 72px; height: 72px; }
+  .hop h1 { font-size: 1.5rem; margin: 0; }
+  .hop p { color: var(--muted); max-width: 30em; margin: 0; line-height: 1.5; }
+  .hop .pill { margin-top: 6px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<!--
+  Buckshot ▸ Phone Transfers: the QR code on the Mac points here, with the Mac's Wi-Fi address and the link's
+  secret key after the "#". Everything after "#" stays on the phone (browsers never send it to this website), and
+  this page only forwards the phone to that Mac on the same Wi-Fi. Files never touch this site.
+-->
+<main class="hop">
+  <picture><source srcset="../icon-light.png" media="(prefers-color-scheme: light)"><img src="../icon-dark.png" alt=""></picture>
+  <div id="going">
+    <h1>Connecting to your Mac…</h1>
+    <p>Make sure your phone is on the same Wi‑Fi as your Mac.</p>
+    <a class="pill" id="open" href="#">Open Phone Transfers</a>
+  </div>
+  <div id="bad" hidden>
+    <h1>Scan the code in Buckshot</h1>
+    <p>On your Mac, open Buckshot ▸ Phone Transfers and scan the QR code with your phone's camera.</p>
+  </div>
+</main>
+<script>
+  // "#192.168.1.23:52790/<32 hex key>". Only a private (home or office Wi-Fi) address is followed, so this page
+  // can't be used to send anyone anywhere else.
+  (function () {
+    var m = location.hash.slice(1).match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3}):(\d{2,5})\/([0-9a-f]{32})$/);
+    var ok = false;
+    if (m) {
+      var a = +m[1], b = +m[2], parts = [a, b, +m[3], +m[4]], port = +m[5];
+      ok = parts.every(function (n) { return n <= 255; }) && port >= 1024 && port <= 65535 &&
+        (a === 10 || (a === 172 && b >= 16 && b <= 31) || (a === 192 && b === 168));
+    }
+    if (!ok) { document.getElementById("going").hidden = true; document.getElementById("bad").hidden = false; return; }
+    var target = "http://" + parts.join(".") + ":" + port + "/?k=" + m[6];
+    document.getElementById("open").href = target;
+    location.replace(target);
+  })();
+</script>
+</body>
+</html>
