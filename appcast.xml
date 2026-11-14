@@ -5,6 +5,15 @@
     <link>https://rockyshootingstar.github.io/buckshot-site/appcast.xml</link>
     <language>en</language>
     <item>
+      <title>Buckshot 0.5 (build 252)</title>
+      <pubDate>Sat, 14 Nov 2026 07:26:09 -0700</pubDate>
+      <sparkle:version>252</sparkle:version>
+      <sparkle:shortVersionString>0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>New: Phone Transfers. Send files between your Mac and your phone over Wi‑Fi by scanning a QR code, both ways, no app needed. Swipe to delete on your phone, and it tells you if a download didn&#x27;t finish. Also new home greetings and smoother loading.</p>]]></description>
+      <enclosure url="https://github.com/rockyshootingstar/buckshot-site/releases/download/v0.5-252/Buckshot-0.5-252.zip" type="application/octet-stream" sparkle:edSignature="DXJ2rlegLQdlaC1M9vJtvTsGAKaM/4G/CJ8w6IG1GeisLjgEaj+THx2K3rt/MQ9kIo04dgUCXZpOGTg0TYZ2AA==" length="9986325" />
+    </item>
+    <item>
       <title>Buckshot 0.5 (build 232)</title>
       <pubDate>Fri, 13 Nov 2026 22:09:39 -0700</pubDate>
       <sparkle:version>232</sparkle:version>
